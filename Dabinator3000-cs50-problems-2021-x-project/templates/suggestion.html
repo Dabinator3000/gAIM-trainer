@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   gAIM- Your Aim Trainer
+
+{% endblock %}
+
+
+{% block main %}
+<form
+
+method=”POST”
+
+enctype=”multipart/form-data”
+
+name=”EmailForm”>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label><br>
+    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+  </div>
+<br>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <br>
+    <textarea class="form-control" id="text" rows="9" cols="100"></textarea>
+  </div>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

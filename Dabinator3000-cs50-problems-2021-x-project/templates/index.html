@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   gAIM- Your Aim Trainer
+
+{% endblock %}
+
+
+{% block main %}
+<!-- Classic Game: Flick Practice -->
+<section id="classic">
+
+
+<button onclick="c_refresh()"> Refresh</button> {% if session.user_id %} <button id="button" onclick="c_save()" > Save</button>
+{% endif %}
+
+
+    <div class="container-fluid" style="background-color: blue;" >
+    <h2 id="score"></h2>
+    <h3 id = "save"></h3>
+    <img id = "ic" src="/static/ic.png" style="position:relative; left:0px; top:0px;" onclick = "c_modify()">
+
+    </div>
+    <h4 id= "heading2" class="display-5" >Click on the target to start! </h4>
+
+
+</section>
+<!-- Rapid Game: Tracking Practice -->
+<section id="rapid">
+
+    <button onclick="r_refresh()" > Refresh</button> <button onclick="r_start();setTimeout(stop, 15000);" > Start </button>
+     <button onclick="r_save()" > Save</button>
+    <div class="container-fluid" style="background-color: red;"  id= "sa" onmouseout="r_comeback()">
+
+    <img id = "img" src="/static/ir.png" style="position:relative; left:0px; top:0px;" onmouseenter="rp_timer()" onmouseleave="rr_timer()">
+
+
+
+    </div>
+    <h4 id= "heading3" class="display-5" >Click on the target to start! </h4>
+
+</section>
+
+
+<script src="/static/apps.js"> </script>
+{% endblock %}

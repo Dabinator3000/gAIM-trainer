@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    High Score
+{% endblock %}
+
+{% block main %}
+
+    <main class="container p-5">
+
+    <table class="table table-striped">
+
+
+        <thead>
+            <tr><th> CLASSIC</th>
+                <th>Username</th>
+                <th>Score (Lower is Better)</th>
+                <th>Time</th>
+
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            {% for value in score_c %}
+                <tr>
+                    <td> </td>
+                    <td>{{ value['username'] }}</td>
+                    <td>{{ value['score'] }}</td>
+                    <td>{{ value['date']   }}</td>
+
+
+
+
+                </tr>
+            {% endfor %}
+
+
+
+        </tbody>
+
+
+
+
+    </table>
+
+    <br> <br> <br>
+
+    <table class="table table-striped">
+
+
+        <thead>
+            <tr><th> RAPID</th>
+                <th>Username</th>
+                <th>Score (Hisher is Better) </th>
+                <th>Time</th>
+
+
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            {% for value in score_r %}
+                <tr>
+                    <td></td>
+                    <td>{{ value['username'] }}</td>
+                    <td>{{ value['score'] }}</td>
+                    <td>{{ value['date']   }}</td>
+
+
+
+
+                </tr>
+            {% endfor %}
+
+
+
+        </tbody>
+
+
+
+
+    </table>
+
+        </main>
+{% endblock %}
